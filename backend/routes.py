@@ -1,7 +1,10 @@
 from backend import app
 import time
-# from flask import render_template
+from flask import render_template
 
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/api/hello')
 def hello():
