@@ -3,7 +3,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 
 import { Mail, Notifications } from "@mui/icons-material";
-import { Avatar, InputBase, Menu, MenuItem, alpha } from "@mui/material";
+import {
+	Avatar,
+	Grid,
+	InputBase,
+	Menu,
+	MenuItem,
+	Paper,
+	alpha,
+} from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
 import Badge from "@mui/material/Badge";
 import Box from "@mui/material/Box";
@@ -17,7 +25,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
 import * as React from "react";
-import { Outlet } from "react-router-dom";
+import StickyHeadTable from "../../components/table/StickyHeaderTable";
 import { mainListItems, secondaryListItems } from "../listItems";
 
 const drawerWidth = 240;
@@ -238,8 +246,24 @@ export default function Layout() {
 					}}
 				>
 					<Toolbar />
-					<Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-						<Outlet />
+					<Container sx={{ mt: 4, mb: 4 }}>
+						<Grid container spacing={3}>
+							{/* Chart */}
+							<Grid item xs={12} md={12} lg={12}>
+								<Paper
+									sx={{
+										p: 2,
+										display: "flex",
+										flexDirection: "column",
+									}}
+								></Paper>
+								<StickyHeadTable />
+								<StickyHeadTable />
+								<StickyHeadTable />
+								<StickyHeadTable />
+							</Grid>
+							{/* Recent Deposits */}
+						</Grid>
 					</Container>
 				</Box>
 			</Box>
