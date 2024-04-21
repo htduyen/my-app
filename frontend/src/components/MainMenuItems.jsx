@@ -9,23 +9,25 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
 import { Fragment } from "react";
+import { useNavigate } from "react-router-dom";
 
 const MainMenuItems = () => {
+	let navigate = useNavigate();
 	return (
 		<Fragment>
-			<ListItemButton>
+			<ListItemButton onClick={() => navigate("/")}>
 				<ListItemIcon>
 					<DashboardIcon />
 				</ListItemIcon>
 				<ListItemText primary="Dashboard" />
 			</ListItemButton>
-			<ListItemButton>
+			<ListItemButton onClick={() => navigate("/orders")}>
 				<ListItemIcon>
 					<ShoppingCartIcon />
 				</ListItemIcon>
 				<ListItemText primary="Orders" />
 			</ListItemButton>
-			<ListItemButton>
+			<ListItemButton onClick={() => navigate("/customers")}>
 				<ListItemIcon>
 					<PeopleIcon />
 				</ListItemIcon>

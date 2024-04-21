@@ -1,7 +1,9 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Blogs from "./templates/pages/Blogs";
-import NoPage from "./templates/pages/NoPage";
+import { Route, Routes } from "react-router-dom";
 import Dashboard from "./templates/pages/Dashboard";
+import SignIn from "./templates/pages/SignIn";
+import SignUp from "./templates/pages/SignUp";
+import ForgotPassword from "./templates/pages/ForgotPassword";
+import NoPage from "./templates/pages/NoPage";
 
 function App() {
 	// const [message, setMessage] = useState("");
@@ -14,20 +16,16 @@ function App() {
 
 	return (
 		<div className="App">
-			<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<Dashboard />}>
-						{/* <Route path="/dashboard" element={<Dashboard />} /> */}
-						{/* <Route path="blogs" element={<Blogs />} /> */}
-						{/* <Route path="deposits" element={<Deposits />} />
-						<Route path="contact" element={<Contact />} /> */}
-						<Route path="*" element={<NoPage />} />
-					</Route>
-				</Routes>
-			</BrowserRouter>
-			{/* <header className="App-header">
-        <p>Message from Flask: {message}</p>
-      </header> */}
+			<Routes>
+				<Route path="/" element={<Dashboard></Dashboard>} />
+				<Route path="/sign-in" element={<SignIn></SignIn>} />
+				<Route path="/sign-up" element={<SignUp></SignUp>} />
+				<Route
+					path="/reset-password"
+					element={<ForgotPassword></ForgotPassword>}
+				/>
+				<Route path="/*" element={<NoPage></NoPage>} />
+			</Routes>
 		</div>
 	);
 }
